@@ -1,6 +1,6 @@
 /*
-Student Name: 
-Student Number: 
+Student Name: Yağmur Selek
+Student Number: 2017400273
 Project Number: 1
 Compile Status: [SUCCESS/FAIL]
 Running Status: [SUCCESS/FAIL]
@@ -13,8 +13,31 @@ using namespace std;
 
 void Restaurant::execute(const vector<string>& operations) {
     for (const string& op : operations){
-        cout << "Operation: " << op << "\t"; 
-        
+        /* Conditional statements checks the given input to decide operation*/
+        cout << "Operation: " << op << "\t";
+        if(op=="N") {
+            //i represents table's number in tables[] for each condition
+            int i=0;
+            //increments i till find an unoccupied table
+            while(tables[i].isOccupied()){
+                i++;
+           }
+            tables[i].occupy();
+}
+        else if(op=="S") {
+            int i=(int)tables.capacity()-1;
+            //decrease i till find an unoccupied table
+            while(tables[i].isOccupied()) {
+                i--;
+            }
+            tables[i].occupy();
+        }
+        else {
+            int i=stoi(op)-1;
+            tables[i].empty();
+
+        }
+
 		/* YOU NEED TO IMPLEMENT THIS PART */
 
         cout << "State: " << *this << endl;

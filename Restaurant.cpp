@@ -13,8 +13,9 @@ using namespace std;
 
 void Restaurant::execute(const vector<string>& operations) {
     for (const string& op : operations){
-        /* Conditional statements checks the given input to decide operation*/
+
         cout << "Operation: " << op << "\t";
+        /* Conditional statements checks the given input to decide operation*/
         if(op=="N") {
             //i represents table's number in tables[] for each condition
             int i=0;
